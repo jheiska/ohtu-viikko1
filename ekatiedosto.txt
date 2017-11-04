@@ -1,3 +1,0 @@
-muutetaan tiedostoa
-
-muutos testataan add -p
