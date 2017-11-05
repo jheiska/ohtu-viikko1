@@ -50,7 +50,7 @@ public class StatisticsTest {
         Player player = stats.search("Hasek");
         assertEquals(null, player);
     }
-    
+
     @Test
     public void oikeanKokoinenLista() {
         List<Player> joukkueenpelaajat = stats.team("EDM");
@@ -58,12 +58,23 @@ public class StatisticsTest {
         List<Player> joukkueenpelaajat2 = stats.team("PIT");
         assertEquals(1, joukkueenpelaajat2.size());
     }
-    
+
     @Test
     public void oikeaPelaajaListalla() {
-        List<Player> joukkueenpelaajat2 = stats.team("DET");
-        assertEquals(stats.search("Yzerman"), joukkueenpelaajat2.get(0));
+        List<Player> joukkueenpelaajat = stats.team("DET");
+        assertEquals(stats.search("Yzerman"), joukkueenpelaajat.get(0));
     }
-   
-    
+
+ 
+//    @Test
+//    public void oikeanKokoinenScorerLista() {
+//        assertEquals(2, stats.topScorers(2).size());
+//    }
+
+    @Test
+    public void oikeaParasScoraaja() {
+        List<Player> scoraajat = stats.topScorers(3);
+        assertEquals(stats.search("Gretzky"), scoraajat.get(0));
+    }
+
 }
